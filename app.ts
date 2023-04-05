@@ -1,6 +1,6 @@
 import {app,BrowserWindow} from 'electron';
 import path from 'path';
-import WalletGen from "./wallet-gen";
+
 
 
 function createWindow(){
@@ -9,7 +9,8 @@ function createWindow(){
         height:480,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
-        }
+        },
+        autoHideMenuBar: true
     });
     win.loadFile('index.html');
 }
@@ -29,6 +30,3 @@ app.whenReady().then(() => {
       app.quit()
     }
   });
-
-//var generator = new WalletGen();
-//generator.autoGen();

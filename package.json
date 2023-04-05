@@ -5,7 +5,8 @@
   "main": "./build/app.js",
   "scripts": {
     "build": "rimraf ./build && tsc",
-    "start": "electron-forge start",
+    "start": "npm run build && electron .",
+    "console": "npm run build && node ./build/view.js",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
@@ -19,6 +20,7 @@
     "@electron-forge/maker-zip": "^6.1.1",
     "@types/electron": "^1.6.10",
     "@types/web3": "^1.2.2",
+    "antd": "^5.4.0",
     "electron": "^24.0.0",
     "rimraf": "^4.4.1",
     "typescript": "^5.0.3",
